@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.braz.rui";
+option java_outer_classname = "KotlinGerenciadorTarefas";
+option objc_class_prefix = "HLW";
+
+package br.com.braz.rui;
+
+service KotlinGerenciadorTarefasService {
+  rpc send (KotlinGerenciadorTarefasRequest) returns (KotlinGerenciadorTarefasReply) {}
+}
+
+message KotlinGerenciadorTarefasRequest {
+  string name = 1;
+}
+
+message KotlinGerenciadorTarefasReply {
+  string message = 1;
+}
