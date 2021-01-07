@@ -11,10 +11,32 @@ service KotlinGerenciadorTarefasService {
   rpc send (KotlinGerenciadorTarefasRequest) returns (KotlinGerenciadorTarefasReply) {}
 }
 
+service NovaTarefa{
+  rpc send(NovaTarefaRequest) returns (NovaTarefaResponse){}
+}
+
+message NovaTarefaRequest{
+  string nome = 1;
+  string descricao = 2;
+  string tempo = 3;
+  string dataInicio = 4;
+}
+
+message NovaTarefaResponse{
+  string id = 1;
+  string nome = 2;
+}
+
 message KotlinGerenciadorTarefasRequest {
   string name = 1;
 }
 
 message KotlinGerenciadorTarefasReply {
   string message = 1;
+}
+
+enum TarefaStatus{
+  TODO = 0;
+  DOING = 1;
+  DONE = 2;
 }

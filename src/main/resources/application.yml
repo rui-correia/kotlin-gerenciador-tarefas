@@ -1,3 +1,14 @@
 micronaut:
   application:
     name: kotlinGerenciadorTarefas
+
+# Postgres
+datasources:
+  default:
+    url: ${JDBC_URL:`jdbc:postgresql://localhost:5433/gerenciador-tarefa`}
+    driverClassName: org.postgresql.Driver
+    username: ${JDBC_USER:postgres}
+    password: ${JDBC_PASSWORD:postgres}
+    schema-generate: CREATE_DROP
+    dialect: POSTGRES
+    connection-timeout: 2000

@@ -31,8 +31,19 @@ dependencies {
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut.grpc:micronaut-grpc-runtime")
     implementation("javax.annotation:javax.annotation-api")
+    implementation("io.micronaut.sql:micronaut-hibernate-jpa")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    //runtime
     runtimeOnly("ch.qos.logback:logback-classic")
+    // https://mvnrepository.com/artifact/io.micronaut.data/micronaut-data-jdbc
+    runtime group: 'io.micronaut.data', name: 'micronaut-data-jdbc', version: '1.1.2'
+    // https://mvnrepository.com/artifact/io.micronaut.data/micronaut-data-hibernate-jpa
+    compile group: 'io.micronaut.data', name: 'micronaut-data-hibernate-jpa', version: '1.1.2'
+
+
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    //tests
     testImplementation("io.micronaut:micronaut-http-client")
 }
 
