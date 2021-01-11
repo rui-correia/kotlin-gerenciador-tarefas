@@ -1,6 +1,7 @@
 package br.com.braz.rui.adapters.persistence.domain
 
 import br.com.braz.rui.NovaTarefaRequest
+import br.com.braz.rui.NovaTarefaResponse
 import br.com.braz.rui.TarefaStatus
 import org.hibernate.annotations.GenericGenerator
 import javax.persistence.*
@@ -24,4 +25,12 @@ data class Tarefa(
                 this(null, tarefaRequest.nome, tarefaRequest.descricao, tarefaRequest.tempo, tarefaRequest.dataInicio)
 
 
+
+        //TODO - Melhorar depois
+        fun toResponse() : NovaTarefaResponse {
+                return NovaTarefaResponse.newBuilder()
+                        .setId(this.id!!)
+                        .setNome(this.nome)
+                        .build()
+        }
 }

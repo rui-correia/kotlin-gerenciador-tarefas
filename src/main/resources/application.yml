@@ -12,3 +12,6 @@ datasources:
     schema-generate: CREATE_DROP
     dialect: POSTGRES
     connection-timeout: 2000
+
+# JPA
+jpa.default.properties.hibernate.hbm2ddl.auto: update

@@ -11,6 +11,7 @@ const val ERRO_DESCONHECIDO = "Erro desconhecido."
 
 @Singleton
 class TarefaService(private val tarefaRepository: TarefaRepository) {
+
     fun criarTarefa(request: NovaTarefaRequest): Tarefa {
         val tarefa = Tarefa(request)
 
