@@ -5,6 +5,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "6.1.0"
     id("io.micronaut.application") version "1.2.0"
     id("com.google.protobuf") version "0.8.13"
+    //id("org.flywaydb.flyway") version "7.5.4"
 }
 
 version = "0.1"
@@ -35,7 +36,9 @@ dependencies {
     // Database configuration
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
-    runtimeOnly("org.postgresql:postgresql")
+    //runtimeOnly("org.postgresql:postgresql")
+    implementation("com.h2database:h2:1.4.197")
+    implementation("io.micronaut.flyway:micronaut-flyway")
 
     // Kotlin essential
     implementation("io.grpc:grpc-kotlin-stub:${grpctVersionKotlin}")
@@ -96,3 +99,11 @@ protobuf {
         }
     }
 }
+//
+//flyway {
+//    url = 'jdbc:h2:mem:testdb'
+//    user = 'sa'
+//    password = ''
+//    baselineOnMigrate = true
+//    locations = ['/src/main/resources/main/sql']
+//}
